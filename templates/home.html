@@ -1,3 +1,29 @@
-<h1>
-    hello
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Pricing Prediction</title>
+</head>
+<body>
+    <h1>Boston House Price Prediction</h1>
+    <form action="{{url_for('predict')}}" method="post">
+        <input type="number" name="CRIM" placeholder="CRIM (Crime rate)" step="any" required><br>
+        <input type="number" name="ZN" placeholder="ZN (Residential land proportion)" step="any" required><br>
+        <input type="number" name="INDUS" placeholder="INDUS (Non-retail business proportion)" step="any" required><br>
+        <input type="number" name="CHAS" placeholder="CHAS (Charles River dummy: 0 or 1)" step="any" required><br>
+        <input type="number" name="NOX" placeholder="NOX (Nitric oxides concentration)" step="any" required><br>
+        <input type="number" name="RM" placeholder="RM (Average rooms per dwelling)" step="any" required><br>
+        <input type="number" name="AGE" placeholder="AGE (Proportion built before 1940)" step="any" required><br>
+        <input type="number" name="DIS" placeholder="DIS (Distance to employment centres)" step="any" required><br>
+        <input type="number" name="RAD" placeholder="RAD (Access to highways)" step="any" required><br>
+        <input type="number" name="TAX" placeholder="TAX (Property tax rate)" step="any" required><br>
+        <input type="number" name="PTRATIO" placeholder="PTRATIO (Pupil-teacher ratio)" step="any" required><br>
+        <input type="number" name="B" placeholder="B (Proportion of Black residents)" step="any" required><br>
+        <input type="number" name="LSTAT" placeholder="LSTAT (% lower status population)" step="any" required><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    <h3>{{prediction_text}}</h3>
+</body>
+</html>
